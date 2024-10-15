@@ -1,3 +1,9 @@
+# Anthology Builder
+
+This is a simple test project using TypeScript React to create some basic tools for anthology creation, such as ordering collected stories and, eventually, providing copy/pasteable author lists sorted alphabetically, by story order in the collection, etc.
+
+Project is still in progress.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

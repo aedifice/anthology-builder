@@ -1,24 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
+import StoryForm from './components/StoryForm';
+import StoryList from './components/StoryList';
+import { useState } from 'react';
 import './App.css';
 
 function App() {
+  const [stories, setStories]: [string[], Function] = useState([]);
+
+  function addStory(storyTitle: string) {
+    setStories((stories: string[]) => [...stories, storyTitle]);
+  }
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        Anthology Builder
       </header>
+      <StoryForm saveStory={addStory} />
+      <StoryList data={stories} />
     </div>
   );
 }
