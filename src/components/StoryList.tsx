@@ -1,12 +1,20 @@
-function StoryList(props: any) {
+import Story, { StoryProps } from './Story';
+
+function StoryList(props: {data: StoryProps[]}) {
     const stories = props.data;
 
     function display() {
-        // temporarily provide simple story title display
-        // later will hand off each story to the Story component
         if (stories.length > 0) {
             return (
-                <p>{stories.join(' | ')}</p>
+                <ul>
+                    {stories.map((story: StoryProps) =>
+                        (<Story 
+                            title={story.title}
+                            author={story.author}
+                            length={story.length} 
+                        />)
+                    )}
+                </ul>
             );
         } else {
             return(<h1>No stories in anthology yet</h1>);

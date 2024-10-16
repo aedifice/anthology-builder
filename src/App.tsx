@@ -1,13 +1,15 @@
 import StoryForm from './components/StoryForm';
 import StoryList from './components/StoryList';
+import { StoryProps } from './components/Story';
 import { useState } from 'react';
 import './App.css';
 
 function App() {
-  const [stories, setStories]: [string[], Function] = useState([]);
+  const [stories, setStories]: [StoryProps[], Function] = useState([]);
 
   function addStory(storyTitle: string) {
-    setStories((stories: string[]) => [...stories, storyTitle]);
+    const newStory: StoryProps = {title: storyTitle, author: 'temp', length: 1200};
+    setStories((stories: StoryProps[]) => [...stories, newStory]);
   }
 
   return (

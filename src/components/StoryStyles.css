@@ -1,5 +1,8 @@
 .story {
+    margin: 8px;
     border-style: solid;
+    border-radius: 10px;
+    width: 95%;
 }
 
 .story-form {
